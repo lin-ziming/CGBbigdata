@@ -11,7 +11,7 @@ import org.apache.flink.api.java.operators.DataSource;
 public class HelloFlink {
     public static void main(String[] args) throws Exception {
         //1.获取执行环境
-        ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
+        ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();//单例
         //2.获取数据源
         DataSource<Integer> source = env.fromElements(1, 2, 3, 4, 5);
         //3.转化数据
