@@ -36,7 +36,7 @@ public class SourceTest {
             @Override
             public void flatMap(String value, Collector<Word> out) throws Exception {
                 String[] split = value.split(" ");
-                Word word = new Word();
+                Word word = new Word();//代码优化：1.不要在循环内new对象，消耗内存 2.不要用+拼接字符串，也是耗内存
                 for (String s : split){
                     word.setWord(s);
                     word.setCount(1);
